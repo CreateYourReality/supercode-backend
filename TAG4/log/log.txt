@@ -1,0 +1,6 @@
+warn :: Thu, 06 Jul 2023 15:07:09 GMT :: text1
+warn :: Thu, 06 Jul 2023 15:07:09 GMT :: text2
+err :: Thu, 06 Jul 2023 15:07:09 GMT :: text3
+info :: Thu, 06 Jul 2023 15:07:09 GMT :: text4
+err :: Thu, 06 Jul 2023 15:07:09 GMT :: text5
+Thu, 06 Jul 2023 15:07:09 GMT :: text6

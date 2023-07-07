@@ -1,4 +1,4 @@
-import { appendFile,mkdir,writeFile } from 'node:fs/promises';
+import { appendFile,mkdir } from 'node:fs/promises';
 
 const fileDir = `./log`;
 const errorDir = `./error`;
@@ -30,10 +30,9 @@ const logME = async (logTXT, logType) => {
     logType? output = `${logType} :: ${date} :: ${logTXT+logSuffix}` : output = `${date} :: ${logTXT+logSuffix}`
     
     try{
-        console.log(logType);
         switch(logType){
             case "warn": await appendFile(warnPath,output);break;
-            case "error": await appendFile(errorPath,output);break;
+            case "err": await appendFile(errorPath,output);break;
             case "info": await appendFile(infoPath,output);break;
             default: break;
         }
@@ -41,17 +40,15 @@ const logME = async (logTXT, logType) => {
     }catch{
         (e) => {console.log(e);}
     }
-
     return true;
-
 }
 
     await createPaths(dirArray);
-    await logME("text","warn").catch((e) => console.log("Here: ",e))
-    await logME("text","warn").catch((e) => console.log("Here: ",e))
-    await logME("text","error").catch((e) => console.log("Here: ",e))
-    await logME("text","info").catch((e) => console.log("Here: ",e))
-    await logME("text","error").catch((e) => console.log("Here: ",e))
-    await logME("text").catch((e) => console.log("Here: ",e))
+    await logME("text1","warn").catch((e) => console.log("Here: ",e))
+    await logME("text2","warn").catch((e) => console.log("Here: ",e))
+    await logME("text3","err").catch((e) => console.log("Here: ",e))
+    await logME("text4","info").catch((e) => console.log("Here: ",e))
+    await logME("text5","err").catch((e) => console.log("Here: ",e))
+    await logME("text6").catch((e) => console.log("Here: ",e))
 
 
