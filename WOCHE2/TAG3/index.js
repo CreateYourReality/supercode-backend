@@ -1,10 +1,8 @@
 import express from "express";
-import { appendFile, writeFile,readFile } from "node:fs/promises";
 
 const app = express();
 const PORT = 9898;
 
-const fileURL = new URL("./data.json", import.meta.url)
 const myData = [
     {
         "ID": 1,
